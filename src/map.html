@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- Author: Settor Amediku -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>D3 Assignment - UK Map Visualisation</title>
+    <link rel="stylesheet" href="css/map.css">
+</head>
+
+<body>
+    <!-- scroll down -->
+    <h4>D3 Visualisation of the UK &darr;</h4> 
+    <div id="ukmap">
+        <div class="info">
+            <div id="controller" class="right">
+                <input type="range" id="mapTownCount" min="0" max="500" value="50">
+                <button id="getValueButton">Plot New Towns</button>
+
+                <br>
+                <span id="sliderValue">Towns Plotted: 50</span>
+            </div>
+
+        </div>
+    </div>
+    <button id="measurementToggle" style="margin-right: 25px;">Enable Measurement Mode</button>
+    <button id="getAllDistances" style="margin-left: 25px;">Parse Plotted Town Distances</button>
+    <script src="js/d3.v7.min.js"></script>
+    <script src="js/topojson.v3.min.js"></script>
+    <script src="js/d3-zoom.v3.min.js"></script>
+    <script type="module" src="js/map.js"></script>
+</body>
+
+</html>

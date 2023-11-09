@@ -10,4 +10,4 @@ The towns are also animated using the easeLinear transition when plotted.
 
 Finally, tooltip functions were implemented for standard and measurement mode, with the former displaying all information about the town from the feed upon hover/mouseover while the latter displays two towns and the distance between them in kilometres(km) when they are clicked on.
 
-The core functionality resides in map.js, styling in map.css, and content in map.html. Due to CORS, serving map.html is necessary for accessing and plotting points from the feed. Tools like Python HTTP server, http-server, live server, or PHP server in VSCode can facilitate this process.
+The core functionality resides in map.js, styling in map.css, and content in map.html. Due to CORS, serving map.html is necessary for accessing and plotting points from the feed. you can use Python HTTP server, http-server, live server, or PHP server in VSCode to serve locally.

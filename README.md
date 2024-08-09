@@ -1,13 +1,60 @@
-This project utilizes D3.js to craft an interactive web-based UK map with features like plottable towns, measurement data functionality, and distance visualization between any two towns. Leveraging D3.js and TopoJSON libraries, the map draws data from a feed, plotting towns dynamically on the SVG of the UK and Isle of Man Map. This map was plotted by plotting features and boundaries using the values from uk.json and isle-of-man.geo-json. The "Plot New Towns" button replots a new set of towns when clicked. 
+Interactive UK Map with D3.js
+=============================
 
-Enhancements include the use of the Haversine formula in measurement mode, allowing users to visualize geographical distances between towns. Measurement mode visualised this distance using stroke and stroke-width with the easeLinear transition type. This data can be downloaded in CSV or JSON formats, fostering data exploration and GIS applications.
+Project Overview
+----------------
 
-Another key addition is the ukcounties.json file, containing comprehensive UK county information. Integrated with townData, it identifies the native countries of counties, displaying statistics for each origin (Eng, Sco, NIR, Wal, IoM) of plotted counties each time the map or points are replotted.
+This project creates an interactive web-based map of the UK and the Isle of Man using D3.js. The map features dynamic town plotting, distance measurement between towns, and comprehensive geographical statistics. It is designed for data exploration and GIS applications.
 
-A slider was also added to control the number of towns that could be plotted from the feed. This enhancement allowed for greater control of the feed url and to access a wide range of towns in the UK. 
+Goal
+----
 
-The towns are also animated using the easeLinear transition when plotted. 
+The primary goal is to develop an interactive map that:
 
-Finally, tooltip functions were implemented for standard and measurement mode, with the former displaying all information about the town from the feed upon hover/mouseover while the latter displays two towns and the distance between them in kilometres(km) when they are clicked on.
+-   Plots towns dynamically based on a data feed.
+-   Measures and visualizes distances between towns.
+-   Provides detailed statistics and geographical information about UK counties.
 
-The core functionality resides in map.js, styling in map.css, and content in map.html. Due to CORS, serving map.html is necessary for accessing and plotting points from the feed. you can use Python HTTP server, http-server, live server, or PHP server in VSCode to serve locally.
+Requirements
+------------
+
+-   Dynamic plotting of towns on an SVG map of the UK and Isle of Man.
+-   Measurement functionality to visualize distances between any two towns using the Haversine formula.
+-   Interactive elements including tooltips and a slider to control town plotting.
+-   Data export in CSV and JSON formats.
+-   Support for local serving of the map due to CORS restrictions.
+
+Solution
+--------
+
+### Architecture
+
+-   **Map Visualization:** Utilizes D3.js and TopoJSON libraries.
+-   **Data Sources:**
+    -   `uk.json` and `isle-of-man.geo-json` for plotting features and boundaries.
+    -   `ukcounties.json` for county statistics.
+-   **Measurement:** Employs the Haversine formula to calculate distances between towns.
+-   **Data Export:** Provides functionality to download measurement data in CSV or JSON formats.
+-   **Interactivity:**
+    -   **Slider:** Controls the number of towns plotted from the data feed.
+    -   **Tooltips:** Display town information on hover or click; show distance between towns in measurement mode.
+    -   **Animations:** Uses easeLinear transitions for plotting towns and distance visualization.
+
+### Map Features
+
+-   **Plotting Towns:** The "Plot New Towns" button replots towns dynamically.
+-   **Distance Measurement:** Visualizes distances with stroke and stroke-width using easeLinear transitions.
+-   **County Statistics:** Displays statistics for each origin of counties (Eng, Sco, NIR, Wal, IoM) integrated with `ukcounties.json`.
+-   **Slider Control:** Allows users to adjust the number of towns plotted from the feed.
+
+### Optimizations
+
+-   **Efficient Data Handling:** Optimized data processing to handle large datasets smoothly.
+-   **Smooth Animations:** Implemented easeLinear transitions for smooth visual effects.
+-   **Data Export:** Enhanced data export functionality for easier analysis and integration with other GIS tools.
+
+### Core Files
+
+-   **map.js:** Contains the core functionality for map interactions and data plotting.
+-   **map.css:** Handles styling and visual presentation of the map.
+-   **map.html:** Serves as the entry point and needs to be served locally due to CORS restrictions. Use tools like Python HTTP server, http-server, live server, or PHP server in VSCode for local serving.
